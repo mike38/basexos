@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'exercices',
+    'jfu'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -81,4 +82,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
+STATIC_ROOT = '/home/mike/django/basexos/basexos/basexos/'
 STATIC_URL = '/static/'
+
+TEMPLATE_CONTEXT_PROCESSORS= {'django.core.context_processors.request',
+ 'django.core.context_processors.static'}
