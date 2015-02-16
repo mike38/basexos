@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 # Create your models here.
 
@@ -11,11 +12,14 @@ class Exercice(models.Model):
     origine = models.CharField(max_length=255)
 
 
-class files(models.Model):
+class Files(models.Model):
     id_ex = models.ForeignKey(Exercice)
     fichier = models.FileField(upload_to='Fichiers')
-    format = models.CharField(max_length=255)
+    format_fichier = models.CharField(max_length=255)
     date_ajout = models.DateField(auto_now_add=True) 
     version = models.PositiveSmallIntegerField()
-    type = models.CharField(max_length=255)
+    correction = models.BooleanField(default=False)
 
+class Test_files(models.Model):
+    fichier = models.FileField(upload_to=settings.MEDIA_ROOT)
+    

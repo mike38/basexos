@@ -82,8 +82,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
-STATIC_ROOT = '/home/mike/django/basexos/basexos/basexos/'
+STATIC_ROOT = BASE_DIR + '/static/'
 STATIC_URL = '/static/'
+MEDIA_ROOT = BASE_DIR + '/media/'
+MEDIA_URL = 'media/'
 
-TEMPLATE_CONTEXT_PROCESSORS= {'django.core.context_processors.request',
+TEMPLATE_CONTEXT_PROCESSORS= {'django.contrib.auth.context_processors.auth',
+'django.core.context_processors.request',
  'django.core.context_processors.static'}
