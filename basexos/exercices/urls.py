@@ -7,6 +7,7 @@ from exercices import views
 
 urlpatterns = patterns('',
     url(r'^$', views.index, name='index'),
+    url(r'^(?P<pk>\d+)/$', views.DetailView.as_view(), name='detail'),
     url( r'^ajout', views.Ajout.as_view(), name = 'ajout' ),
     url( r'upload/', views.upload, name = 'jfu_upload' ),
     url( r'^delete/(?P<pk>\d+)$', views.upload_delete, name = 'jfu_delete' ),

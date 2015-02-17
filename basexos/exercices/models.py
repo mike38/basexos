@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from taggit.managers import TaggableManager
 
 # Create your models here.
 
@@ -8,8 +9,11 @@ class Exercice(models.Model):
     classe = models.CharField(max_length=20)
     matiere = models.CharField(max_length=255)
     chapitre = models.CharField(max_length=255)
-#    mot_clef = django-taggit 
+    motclef = TaggableManager()
     origine = models.CharField(max_length=255)
+
+    def __str__(self):
+        return str(self.id)
 
 
 class Files(models.Model):

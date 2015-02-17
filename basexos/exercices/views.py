@@ -21,11 +21,17 @@ from exercices.models import Exercice, Files, Test_files
 
 
 def index(request):
-    latest_exercices = Exercice.objects.order_by('titre')[:5]
+    latest_exercices = Exercice.objects.order_by('id')[:5]
+#    fichiers = Files.objects.all()
     context = {'latest_exercices': latest_exercices}
+#    context['fichiers']= fichiers
     #print ([id.titre for id in context['latest_exercices']])
     return render(request, 'exercices/index.html', context)
 
+class DetailView(generic.DetailView):
+    model = Exercice
+    template_name = 'exercices/detail.html'
+    
 class Ajout( generic.TemplateView ):
     template_name = 'exercices/ajout.html'
 

@@ -37,7 +37,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'exercices',
-    'jfu'
+    'jfu',
+    'taggit'
 )
 
 MIDDLEWARE_CLASSES = (

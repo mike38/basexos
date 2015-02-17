@@ -5,7 +5,7 @@ from exercices.models import Exercice, Files, Test_files
 
 admin.site.register(Exercice)
 admin.site.register(Test_files)
-
+admin.site.register(Files)
 #class ExerciceAdmin(admin.ModelAdmin):
     
 
